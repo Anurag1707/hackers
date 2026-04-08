@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install fastapi uvicorn streamlit requests
+RUN pip install flask
 
-RUN chmod +x start.sh
+EXPOSE 7860
 
-CMD ["bash", "start.sh"]
+CMD ["python", "inference.py"]

@@ -1,19 +1,20 @@
-name: aura-ai-env
-description: Streamlit-based OpenEnv environment
-version: "1.0"
+name: ai-study-env
 
-api:
-  base_url: http://localhost:7860
+version: 1.0
 
-endpoints:
+description: AI Study Assistant OpenEnv
+
+entrypoint: python inference.py
+
+interfaces:
   reset:
-    method: GET
-    path: /?reset=1
+    method: POST
+    path: /reset
 
   step:
-    method: GET
-    path: /?step=1
+    method: POST
+    path: /step
 
   state:
     method: GET
-    path: /?state=1
+    path: /state

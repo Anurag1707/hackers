@@ -1,0 +1,9 @@
+[project]
+name = "ai-study-openenv"
+version = "1.0.0"
+description = "AI Study Assistant OpenEnv Environment"
+authors = [{name = "Anurag"}]
+dependencies = ["flask"]
+
+[tool.openenv]
+entrypoint = "inference.py"
