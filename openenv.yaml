@@ -1,9 +1,9 @@
 name: aura-ai-env
-description: AI-powered study assistant OpenEnv environment
+description: Smart AI Study Environment
 version: "1.0"
 
 api:
-  base_url: http://localhost:7860
+  base_url: http://localhost:8000
 
 endpoints:
   reset:
