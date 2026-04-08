@@ -5,6 +5,42 @@ import re
 import base64
 from typing import List, Dict
 
+
+import random
+
+# --- OpenEnv API logic inside Streamlit ---
+query = st.query_params
+
+# Global state (simple simulation)
+if "env_state" not in st.session_state:
+    st.session_state.env_state = {"step": 0, "score": 0}
+
+# RESET
+if query.get("reset") == "1":
+    st.session_state.env_state = {"step": 0, "score": 0}
+    st.write({"state": st.session_state.env_state})
+    st.stop()
+
+# STEP
+if query.get("step") == "1":
+    st.session_state.env_state["step"] += 1
+    reward = random.randint(1, 5)
+    st.session_state.env_state["score"] += reward
+
+    done = st.session_state.env_state["step"] >= 10
+
+    st.write({
+        "state": st.session_state.env_state,
+        "reward": reward,
+        "done": done
+    })
+    st.stop()
+
+# STATE
+if query.get("state") == "1":
+    st.write(st.session_state.env_state)
+    st.stop()
+
 # Streamlit config
 st.set_page_config(
     page_title="AI Study Assistant", 

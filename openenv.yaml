@@ -1,19 +1,19 @@
 name: aura-ai-env
-description: Smart AI Study Environment
+description: Streamlit-based OpenEnv environment
 version: "1.0"
 
 api:
-  base_url: http://localhost:8000
+  base_url: http://localhost:7860
 
 endpoints:
   reset:
-    method: POST
-    path: /reset
+    method: GET
+    path: /?reset=1
 
   step:
-    method: POST
-    path: /step
+    method: GET
+    path: /?step=1
 
   state:
     method: GET
-    path: /state
+    path: /?state=1
