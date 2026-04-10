@@ -1,9 +1,12 @@
 [project]
 name = "ai-study-openenv"
 version = "1.0.0"
-description = "AI Study Assistant OpenEnv Environment"
-authors = [{name = "Anurag"}]
-dependencies = ["flask"]
+description = "AI Study Assistant for OpenEnv Hackathon"
+dependencies = [
+    "flask",
+    "openenv-core>=0.2.0"
+]
 
-[tool.openenv]
-entrypoint = "inference.py"
+# 🔥 IMPORTANT (fixes your error)
+[project.scripts]
+server = "server.app:main"
