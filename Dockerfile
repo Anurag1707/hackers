@@ -4,8 +4,10 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install flask
+# 🔥 ALL REQUIRED DEPENDENCIES
+RUN pip install flask openenv-core openai
 
 EXPOSE 7860
 
-CMD ["python", "inference.py"]
+# 👉 OpenEnv server run
+CMD ["python", "server/app.py"]
